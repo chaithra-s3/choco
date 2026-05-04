@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chocolate Shop</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+
+<div class="header">
+    <h1>Chocolate club</h1>
+    <p>Delicious chocolates delivered to your door</p>
+</div>
+
+
+<div class="container">
+    <h2>Order Now</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <input type="number" name="quantity" placeholder="Number of chocolates" required>
+        <button type="submit">Order</button>
+    </form>
+
+    <div class="msg">
+        {{ msg }}
+    </div>
+</div>
+
+</body>
+</html>
+
+<footer class="footer">
+    <p> Chocolate club</p>
+    <p>Made with love | © 2026 All Rights Reserved</p>
+</footer>
